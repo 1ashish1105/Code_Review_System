@@ -19,7 +19,7 @@ function App() {
   async function reviewCode() {
     setLoading(true)
     try {
-      const response = await axios.post('http://localhost:3001/ai/get-review', { code })
+      const response = await axios.post('https://code-review-8ivi.vercel.app/api/ai', { code })
       setReview(response.data)
     } catch (error) {
       console.error("Error fetching review:", error)
@@ -40,8 +40,8 @@ function App() {
               placeholder="Paste your code here..."
             />
           </div>
-          <button 
-            onClick={reviewCode} 
+          <button
+            onClick={reviewCode}
             disabled={loading}
             className="review-btn"
           >
