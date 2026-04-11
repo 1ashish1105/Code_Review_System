@@ -1,8 +1,4 @@
-  "scripts": {
-    "build": "npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "node backend/server.js",
-    "install-all": "npm install && npm install --prefix frontend && npm install --prefix backend"
-  },
+{
   "dependencies": {
     "@google/genai": "^1.49.0",
     "@google/generative-ai": "^0.24.1",

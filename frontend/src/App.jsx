@@ -19,8 +19,7 @@ function App() {
   async function reviewCode() {
     setLoading(true)
     try {
-      const API_URL = import.meta.env.VITE_API_URL || '/api'
-      const response = await axios.post(`${API_URL}/ai/get-review`, { code })
+      const response = await axios.post('http://localhost:3001/ai/get-review', { code })
       setReview(response.data)
     } catch (error) {
       console.error("Error fetching review:", error)
