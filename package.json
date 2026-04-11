@@ -1,4 +1,6 @@
-{
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
   "dependencies": {
     "@google/genai": "^1.49.0",
     "@google/generative-ai": "^0.24.1",
