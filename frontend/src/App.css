@@ -6,7 +6,9 @@
   --text: #c9d1d9;
 }
 
-body, html, #root {
+body,
+html,
+#root {
   margin: 0;
   background-color: var(--bg-dark);
   color: var(--text);
@@ -24,7 +26,8 @@ main {
   box-sizing: border-box;
 }
 
-.left, .right {
+.left,
+.right {
   flex: 1;
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -33,13 +36,13 @@ main {
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .left .code {
-    flex: 1;
-    height: 100%;
-    width: 100%;
+  flex: 1;
+  height: 100%;
+  width: 100%;
 }
 
 .left .code textarea {
@@ -65,31 +68,33 @@ main {
   color: #e6edf3;
 }
 
-.review h1, .review h2, .review h3 { 
-    color: var(--primary); 
-    margin-top: 24px;
+.review h1,
+.review h2,
+.review h3 {
+  color: var(--primary);
+  margin-top: 24px;
 }
 
-.review code { 
-    background: #21262d; 
-    padding: 3px 6px; 
-    border-radius: 6px; 
-    font-family: inherit;
-    color: #ff7b72;
+.review code {
+  background: #21262d;
+  padding: 3px 6px;
+  border-radius: 6px;
+  font-family: inherit;
+  color: #ff7b72;
 }
 
 .review pre {
-    background: #0d1117;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    overflow-x: auto;
+  background: #0d1117;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow-x: auto;
 }
 
 .review pre code {
-    background: transparent;
-    padding: 0;
-    color: inherit;
+  background: transparent;
+  padding: 0;
+  color: inherit;
 }
 
 .review-btn {
@@ -108,34 +113,34 @@ main {
   box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
 }
 
-.review-btn:hover { 
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(88, 166, 255, 0.4);
+.review-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(88, 166, 255, 0.4);
 }
 
 .review-btn:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
-.review-btn:disabled { 
-    opacity: 0.5; 
-    cursor: not-allowed;
-    transform: none;
+.review-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .empty-state {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #8b949e;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #8b949e;
 }
 
 .empty-state h2 {
-    color: var(--text);
-    margin-bottom: 8px;
+  color: var(--text);
+  margin-bottom: 8px;
 }
 
 /* Custom Scrollbar */
