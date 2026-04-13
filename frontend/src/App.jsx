@@ -31,6 +31,11 @@ function App() {
 
   return (
     <>
+      <header>
+        <div className="logo">
+          <h1>✨ Smart Reviewer</h1>
+        </div>
+      </header>
       <main>
         <div className="left">
           <div className="code">

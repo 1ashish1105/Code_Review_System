@@ -1,29 +1,33 @@
-:root {
-  --bg-dark: #0d1117;
-  --bg-card: #161b22;
-  --primary: #58a6ff;
-  --border: #30363d;
-  --text: #c9d1d9;
+header {
+  height: 70px;
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  background: rgba(22, 27, 34, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-body,
-html,
-#root {
-  margin: 0;
-  background-color: var(--bg-dark);
-  color: var(--text);
-  font-family: 'Inter', -apple-system, sans-serif;
-  height: 100%;
-  width: 100%;
+header h1 {
+  font-size: 20px;
+  background: linear-gradient(135deg, #58a6ff 0%, #bc8cff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 main {
   display: flex;
-  height: 100vh;
-  width: 100vw;
-  padding: 24px;
-  gap: 24px;
-  box-sizing: border-box;
+  height: calc(100vh - 70px);
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
+  overflow: hidden;
 }
 
 .left,
@@ -31,18 +35,19 @@ main {
   flex: 1;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
 .left .code {
   flex: 1;
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .left .code textarea {
@@ -51,20 +56,20 @@ main {
   background: transparent;
   color: #d1d5db;
   border: none;
-  padding: 24px;
-  font-family: 'Fira Code', 'Courier New', monospace;
-  font-size: 15px;
+  padding: 20px;
+  font-family: var(--font-mono);
+  font-size: 14px;
   resize: none;
   outline: none;
-  box-sizing: border-box;
+  line-height: 1.6;
 }
 
-.review {
+.right .review {
   flex: 1;
-  padding: 32px;
+  padding: 24px;
   overflow-y: auto;
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.6;
+  font-size: 15px;
   color: #e6edf3;
 }
 
@@ -72,60 +77,57 @@ main {
 .review h2,
 .review h3 {
   color: var(--primary);
-  margin-top: 24px;
+  margin: 1.5rem 0 0.8rem;
 }
 
 .review code {
   background: #21262d;
-  padding: 3px 6px;
-  border-radius: 6px;
-  font-family: inherit;
+  padding: 2px 5px;
+  border-radius: 4px;
   color: #ff7b72;
+  font-size: 0.9em;
 }
 
 .review pre {
   background: #0d1117;
-  padding: 20px;
-  border-radius: 12px;
+  padding: 16px;
+  border-radius: 8px;
   border: 1px solid var(--border);
+  margin: 1rem 0;
   overflow-x: auto;
-}
-
-.review pre code {
-  background: transparent;
-  padding: 0;
-  color: inherit;
 }
 
 .review-btn {
   position: absolute;
-  bottom: 24px;
-  right: 24px;
-  background: var(--primary);
-  color: #ffffff;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #58a6ff 0%, #3a8ee6 100%);
+  color: white;
   border: none;
-  padding: 14px 28px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(88, 166, 255, 0.3);
+  z-index: 10;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .review-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(88, 166, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(88, 166, 255, 0.4);
 }
 
 .review-btn:active {
-  transform: translateY(0);
+  transform: scale(0.98);
 }
 
 .review-btn:disabled {
-  opacity: 0.5;
+  background: var(--border);
+  color: #8b949e;
   cursor: not-allowed;
-  transform: none;
+  box-shadow: none;
 }
 
 .empty-state {
@@ -136,27 +138,64 @@ main {
   justify-content: center;
   text-align: center;
   color: #8b949e;
+  padding: 20px;
 }
 
 .empty-state h2 {
   color: var(--text);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+/* TABLET LAYOUT */
+@media (max-width: 1024px) {
+  main {
+    padding: 15px;
+    gap: 15px;
+  }
 }
 
-::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+/* MOBILE LAYOUT */
+@media (max-width: 768px) {
+  header {
+    height: 60px;
+    justify-content: center;
+  }
+
+  header h1 {
+    font-size: 18px;
+  }
+
+  main {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .left,
+  .right {
+    min-height: 400px;
+    height: 50vh;
+  }
+
+  .review-btn {
+    width: calc(100% - 40px);
+    left: 20px;
+    bottom: 20px;
+    text-align: center;
+  }
+
+  .left .code textarea {
+    padding-bottom: 80px;
+    /* Space for the button */
+  }
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #444c56;
+/* Responsive fixes for Prism code blocks */
+.review pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  display: block;
 }
